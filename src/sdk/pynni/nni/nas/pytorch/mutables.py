@@ -270,7 +270,7 @@ class LayerChoice(Mutable):
     def forward(self, *inputs):
         out = self.registered_module(self.key, self.choices, *inputs)
         #mask = self.mutator.on_forward_layer_choice(self, *inputs)
-        mask = None
+        mask = self.registered_module.active_op_index
         if self.return_mask:
             return out, mask
         return out
