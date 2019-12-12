@@ -103,7 +103,7 @@ class ProxylessNasMutator(BaseMutator):
         for _, mutable, _ in self.named_mutables(distinct=False):
             #k = mutable.key
             #self.mixed_ops[k].set_arch_param_grad(mutable)
-            mutable.registered_module.set_arch_param_grad(len(mutable))
+            mutable.registered_module.set_arch_param_grad(mutable, len(mutable))
 
     def get_architecture_parameters(self):
         """

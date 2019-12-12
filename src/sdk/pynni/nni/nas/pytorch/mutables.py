@@ -193,9 +193,9 @@ class MixedOp(nn.Module):
         index = int(np.argmax(probs))
         return index, probs[index]
 
-    '''def active_op(self, mutable):
+    def active_op(self, mutable):
         """ assume only one path is active """
-        return mutable.choices[self.active_index[0]]'''
+        return mutable.choices[self.active_index[0]]
 
     @property
     def active_op_index(self):
@@ -235,14 +235,15 @@ class MixedOp(nn.Module):
         else:
             return 0
 
-    def set_arch_param_grad(self, mutable_len):
+    def set_arch_param_grad(self, mutable, mutable_len):
         """
         Calculate alpha gradient for this LayerChoice
         """
         binary_grads = self.AP_path_wb.grad.data
-        '''if self.active_op(mutable).is_zero_layer():
+        if self.active_op(mutable).is_zero_layer():
+        #if is_zero_layer:
             self.AP_path_alpha.grad = None
-            return'''
+            return
         if self.AP_path_alpha.grad is None:
             self.AP_path_alpha.grad = torch.zeros_like(self.AP_path_alpha.data)
         probs = self.probs_over_ops.data
