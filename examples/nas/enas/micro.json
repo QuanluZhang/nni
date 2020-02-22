@@ -1,0 +1,262 @@
+{
+  "normal_node_0_x_input": [
+    false,
+    true
+  ],
+  "normal_node_0_x_op": [
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
+  "normal_node_0_y_input": [
+    true,
+    false
+  ],
+  "normal_node_0_y_op": [
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "normal_node_1_x_input": [
+    true,
+    false,
+    false
+  ],
+  "normal_node_1_x_op": [
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "normal_node_1_y_input": [
+    false,
+    true,
+    false
+  ],
+  "normal_node_1_y_op": [
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "normal_node_2_x_input": [
+    false,
+    true,
+    false,
+    false
+  ],
+  "normal_node_2_x_op": [
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
+  "normal_node_2_y_input": [
+    false,
+    true,
+    false,
+    false
+  ],
+  "normal_node_2_y_op": [
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "normal_node_3_x_input": [
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "normal_node_3_x_op": [
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "normal_node_3_y_input": [
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "normal_node_3_y_op": [
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "normal_node_4_x_input": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "normal_node_4_x_op": [
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
+  "normal_node_4_y_input": [
+    false,
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
+  "normal_node_4_y_op": [
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "reduce_node_0_x_input": [
+    true,
+    false
+  ],
+  "reduce_node_0_x_op": [
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
+  "reduce_node_0_y_input": [
+    false,
+    true
+  ],
+  "reduce_node_0_y_op": [
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "reduce_node_1_x_input": [
+    false,
+    true,
+    false
+  ],
+  "reduce_node_1_x_op": [
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
+  "reduce_node_1_y_input": [
+    false,
+    true,
+    false
+  ],
+  "reduce_node_1_y_op": [
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "reduce_node_2_x_input": [
+    false,
+    true,
+    false,
+    false
+  ],
+  "reduce_node_2_x_op": [
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "reduce_node_2_y_input": [
+    false,
+    true,
+    false,
+    false
+  ],
+  "reduce_node_2_y_op": [
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
+  "reduce_node_3_x_input": [
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
+  "reduce_node_3_x_op": [
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
+  "reduce_node_3_y_input": [
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "reduce_node_3_y_op": [
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "reduce_node_4_x_input": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "reduce_node_4_x_op": [
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "reduce_node_4_y_input": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "reduce_node_4_y_op": [
+    false,
+    false,
+    false,
+    false,
+    true
+  ]
+}

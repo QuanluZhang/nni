@@ -1,0 +1,186 @@
+{
+  "InputChoice11": [
+    false,
+    true,
+    false,
+    true,
+    false
+  ],
+  "InputChoice13": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "InputChoice15": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
+  "InputChoice17": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
+  "InputChoice19": [
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    true
+  ],
+  "InputChoice21": [
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "InputChoice23": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
+  "InputChoice3": [
+    false
+  ],
+  "InputChoice5": [
+    true,
+    true
+  ],
+  "InputChoice7": [
+    false,
+    false,
+    false
+  ],
+  "InputChoice9": [
+    false,
+    true,
+    false,
+    true
+  ],
+  "LayerChoice1": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "LayerChoice10": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "LayerChoice12": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "LayerChoice14": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "LayerChoice16": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "LayerChoice18": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "LayerChoice2": [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "LayerChoice20": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "LayerChoice22": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "LayerChoice4": [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
+  "LayerChoice6": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
+  "LayerChoice8": [
+    false,
+    false,
+    false,
+    true,
+    false,
+    false
+  ]
+}
