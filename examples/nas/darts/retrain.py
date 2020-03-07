@@ -11,8 +11,8 @@ from torch.utils.tensorboard import SummaryWriter
 
 import datasets
 import utils
-from f_model import CNN
-#from nni.nas.pytorch.fixed import apply_fixed_architecture
+from model import CNN
+from nni.nas.pytorch.fixed import apply_fixed_architecture
 from nni.nas.pytorch.utils import AverageMeter
 from nni.compression.torch import FPGMPruner
 
@@ -121,7 +121,7 @@ if __name__ == "__main__":
     dataset_train, dataset_valid = datasets.get_dataset("cifar10", cutout_length=16)
 
     model = CNN(32, 3, 36, 10, args.layers, auxiliary=True)
-    #apply_fixed_architecture(model, args.arc_checkpoint, device=device)
+    apply_fixed_architecture(model, args.arc_checkpoint)
     print(model)
 
     '''configure_list = [{

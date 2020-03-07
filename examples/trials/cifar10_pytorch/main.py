@@ -52,7 +52,7 @@ def prepare(args):
     ])
 
     trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform_train)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=2)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=4)
 
     testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform_test)
     testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=2)
@@ -61,6 +61,7 @@ def prepare(args):
 
     # Model
     print('==> Building model..')
+    args['model'] = 'mobilenet'
     if args['model'] == 'vgg':
         net = VGG('VGG19')
     if args['model'] == 'resnet18':
@@ -114,6 +115,7 @@ def train(epoch, batches=-1):
     for batch_idx, (inputs, targets) in enumerate(trainloader):
         inputs, targets = inputs.to(device), targets.to(device)
         optimizer.zero_grad()
+        print('size: ', inputs.size())
         outputs = net(inputs)
         loss = criterion(outputs, targets)
         loss.backward()
@@ -178,7 +180,7 @@ def test(epoch):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--epochs", type=int, default=200)
+    parser.add_argument("--epochs", type=int, default=1)
 
     # Maximum mini-batches per epoch, for code testing purpose
     parser.add_argument("--batches", type=int, default=-1)
@@ -187,12 +189,13 @@ if __name__ == '__main__':
 
     try:
         RCV_CONFIG = nni.get_next_parameter()
-        #RCV_CONFIG = {'lr': 0.1, 'optimizer': 'Adam', 'model':'senet18'}
+        RCV_CONFIG = {'lr': 0.1, 'optimizer': 'Adam', 'model':'mobilenet'}
         _logger.debug(RCV_CONFIG)
 
         prepare(RCV_CONFIG)
         acc = 0.0
         best_acc = 0.0
+        print('batchsize: ', args.batches)
         for epoch in range(start_epoch, start_epoch+args.epochs):
             train(epoch, args.batches)
             acc, best_acc = test(epoch)
