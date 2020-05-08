@@ -16,7 +16,8 @@ tuner:
   classArgs:
     #choice: maximize, minimize
     optimize_mode: maximize
+    population_size: 3
 trial:
   command: python3 mnist.py
   codeDir: .
-  gpuNum: 1
+  gpuNum: 0

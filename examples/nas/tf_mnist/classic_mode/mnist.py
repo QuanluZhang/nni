@@ -7,16 +7,21 @@ import tempfile
 import time
 
 import tensorflow as tf
+from tensorflow.keras import Model
+
 from tensorflow.examples.tutorials.mnist import input_data
 
 import operators as op
+
+from nni.nas.tensorflow.mutables import LayerChoice, InputChoice
+from nni.nas.tensorflow.classic_nas import get_and_apply_next_architecture
 
 FLAGS = None
 
 logger = logging.getLogger('mnist_AutoML')
 
 
-class MnistNetwork(object):
+class MnistNetwork(Model):
     '''
     MnistNetwork is for initializing and building basic network for mnist.
     '''
@@ -45,6 +50,17 @@ class MnistNetwork(object):
         self.train_step = None
         self.accuracy = None
 
+        self.layer1 = LayerChoice([
+            op.conv2d(channel_1_num, 1),
+            op.conv2d(channel_1_num, 3),
+            op.twice_conv2d(channel_1_num, 3),
+            op.twice_conv2d(channel_1_num, 7),
+            op.DilatedConv(in_ch=1, out_ch=channel_1_num),
+            op.separable_conv(),
+            op.separable_conv(),
+            op.separable_conv()
+        ])
+
     def build_network(self):
         '''
         Building network for mnist, meanwhile specifying its neural architecture search space
@@ -64,6 +80,7 @@ class MnistNetwork(object):
                 raise
             x_image = tf.reshape(self.images, [-1, input_dim, input_dim, 1])
 
+        self.
         """@nni.mutable_layers(
             {
                 layer_choice: [op.conv2d(size=1, in_ch=1, out_ch=self.channel_1_num),
