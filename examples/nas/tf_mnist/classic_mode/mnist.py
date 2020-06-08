@@ -55,10 +55,13 @@ class MnistNetwork(Model):
             op.conv2d(channel_1_num, 3),
             op.twice_conv2d(channel_1_num, 3),
             op.twice_conv2d(channel_1_num, 7),
-            op.DilatedConv(in_ch=1, out_ch=channel_1_num),
-            op.separable_conv(),
-            op.separable_conv(),
-            op.separable_conv()
+            op.separable_conv(channel_1_num, 3),
+            op.separable_conv(channel_1_num, 5),
+            op.separable_conv(channel_1_num, 7)
+        ])
+
+        self.layer2 = LayerChoice([
+            op.max_pool()
         ])
 
     def build_network(self):

@@ -1,6 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras import layers
-from tensorflow.keras.layers import Conv2D #(AveragePooling2D, BatchNormalization, Conv2D, Dense, MaxPool2D)
+from tensorflow.keras.layers import Conv2D, SeparableConv2D, MaxPool2D #(AveragePooling2D, BatchNormalization, Conv2D, Dense, MaxPool2D)
 import math
 
 
@@ -53,23 +53,16 @@ def twice_conv2d(out_ch=-1, size=-1):
     else:
         raise Exception("Unknown filter size: %d." % size)
 
-class DilatedConv(layers.Layer):
-    def __init__(self, size=3, in_ch=-1, out_ch=-1):
-        self.w_matrix = weight_variable([size, size, in_ch, out_ch])
-
-    def call(self, inputs):
-        return tf.nn.atrous_conv2d(inputs, self.w_matrix, rate=2, padding='same')
-
-def separable_conv(inputs, size=-1, in_ch=-1, out_ch=-1):
+def separable_conv(out_ch=-1, size=-1):
     """separable_conv"""
-    if not inputs[1]:
-        x_input = inputs[0][0]
-    else:
-        x_input = sum_op(inputs)
+    #if not inputs[1]:
+    #    x_input = inputs[0][0]
+    #else:
+    #    x_input = sum_op(inputs)
     if size in [3, 5, 7]:
         depth_matrix = weight_variable([size, size, in_ch, 1])
         point_matrix = weight_variable([1, 1, 1*in_ch, out_ch])
-        return tf.nn.separable_conv2d(x_input, depth_matrix, point_matrix, strides=[1, 1, 1, 1], padding='SAME')
+        return SeparableConv2D(out_ch, size, strides=(1, 1), padding='SAME')
     else:
         raise Exception("Unknown filter size: %d." % size)
 
@@ -87,10 +80,10 @@ def avg_pool(inputs, size=-1):
 
 def max_pool(inputs, size=-1):
     """max_pool downsamples a feature map."""
-    if not inputs[1]:
-        x_input = inputs[0][0]
-    else:
-        x_input = sum_op(inputs)
+    #if not inputs[1]:
+    #    x_input = inputs[0][0]
+    #else:
+    #    x_input = sum_op(inputs)
     if size in [3, 5, 7]:
         return tf.nn.max_pool(x_input, ksize=[1, size, size, 1], strides=[1, size, size, 1], padding='SAME')
     else:
